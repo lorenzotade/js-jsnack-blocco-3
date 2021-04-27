@@ -221,3 +221,60 @@ function idGenerator() {
   }
   return id.join('');
 }
+
+
+/* JSNACK 6 */
+
+/* 1- creo un array e lo riempio di elementi */
+/* 2- creo una funzione che prenda come parametro l'array,
+  un numero 'a' e un numero 'b' più grande, ma grande al
+  massimo quanto la lunghezza dell'array */
+/* 3- la funzione mi restituisce un nuovo array con i valori
+  dell'array passato compresi tra 'a' e 'b' */
+
+// dichiaro array di numeri da 1 a 10
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+console.log(splitArr(arr, 4, 8));
+  
+/* FUNCTION */
+  
+// dichiaro array risultato e per i valori arr[i]
+// compresi tra (a-1) e (b-1) ((forma umana))
+// li pusho nell'arrResult
+function splitArr(arr, a, b) {
+  var arrResult = [];
+  for (var i = (a-1); i < arr[b-1]; i++) {
+    arrResult.push(arr[i]);
+  }
+  return arrResult;
+}
+
+
+/* JSNACK 7 */
+
+/* 1- creo due elementi dai valori diversi */
+/* 2- aggiungo elementi casuali a quello che ne ha di meno 
+  fino a quando non hanno lo stesso numero di elementi*/
+
+// creo i due array con lunghezze diverse
+var arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+var arr2 = [1, 2, 3];
+
+// stampo a video gli array prima del ciclo
+console.log('Array n. 1: '+ arr1);
+console.log('Array n. 2: '+ arr2);
+console.log('===============')
+
+// mentre gli array hanno lunghezze diverse, pusho
+// in quello più corto tanti numeri random da 1 a 100
+while (arr1.length != arr2.length) {
+  if (arr1.length < arr2.length) {
+    arr1.push(Math.floor(Math.random() * 100) + 1);
+  } else {
+    arr2.push(Math.floor(Math.random() * 100) + 1);
+  }
+}
+// stampo a video gli array dopo il ciclo
+console.log('Array n. 1: '+ arr1);
+console.log('Array n. 2: '+ arr2);
